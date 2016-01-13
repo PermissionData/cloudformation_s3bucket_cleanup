@@ -6,7 +6,7 @@ cloudformation_s3bucket_cleanup is tool used for cleaning up retired S3 buckets 
 ## Usage
 **compile for your platform using go build**
 ```bash
-// Example for 64bit Ubuntu
+# Example for 64bit Ubuntu
 $ cd ~/cloudformation_s3_bucket
 $ GOOS=linux GOARCH=amd64 go build .
 ```
