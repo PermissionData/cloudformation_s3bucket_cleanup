@@ -6,9 +6,7 @@ cloudformation_s3bucket_cleanup is tool used for cleaning up retired S3 buckets 
 ## Usage
 **compile for your platform using go build**
 ```bash
-# Example for 64bit Ubuntu
-$ cd ~/cloudformation_s3_bucket
-$ GOOS=linux GOARCH=amd64 go build .
+$ go get github.com/PermissionData/cloudformation_s3bucket_cleanup
 ```
 **set up aws credentials in ~/.aws/credentials**
 ```bash
@@ -17,9 +15,9 @@ $ cat ~/.aws/credentials
 aws_access_key_id = <aws_access_key_id>
 aws_secret_access_key = <aws_secret_access_key>
 ```
-**run tool for backing up**
+**run tool**
 ```bash
-$ ./cloudformation_s3bucket_cleanup --aws-region us-east-1 --bucketfilter exhibitors3bucket
+$ cloudformation_s3bucket_cleanup --aws-region us-east-1 --bucketfilter exhibitors3bucket
 ```
 The default value for aws-region is us-east-1; the default value for bucketfilter is exhibitors3bucket.  If you want these exact parameters you don't need to use the CLI args.
 
