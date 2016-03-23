@@ -21,4 +21,4 @@ Check if a ticket for your issue already exists in GitHub issues. If you don't f
 - All regressions need to pass before your pull can be accepted
 
 ## License
-By contributing to ec2_snapshot you agree that your contributions will be licensed under its MIT license.
+By contributing to cloudformation_s3bucket_cleanup you agree that your contributions will be licensed under its MIT license.
