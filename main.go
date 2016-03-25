@@ -2,14 +2,16 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"os"
 
+	"github.com/allanliu/easylogger"
 	"github.com/aws/aws-sdk-go/service/cloudformation"
 	"github.com/aws/aws-sdk-go/service/s3"
 )
 
 func init() {
 	flag.Parse()
+	easylogger.InitializeLog()
 }
 
 func main() {
@@ -22,7 +24,8 @@ func main() {
 	errs := svc.removeUnusedCFBuckets()
 	if len(errs) > 0 {
 		for _, err := range errs {
-			fmt.Println("Error: ", err.Message)
+			easylogger.Log("Error: ", err.Message)
 		}
+		os.Exit(1)
 	}
 }

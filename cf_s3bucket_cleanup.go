@@ -5,6 +5,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/allanliu/easylogger"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/cloudformation"
@@ -33,12 +34,6 @@ type cfS3BucketCleanup struct {
 	bucketFilter string
 }
 
-func panicErr(err error) {
-	if err != nil {
-		panic(err)
-	}
-}
-
 func getSessionConfigs() (*session.Session, *aws.Config) {
 	return session.New(), &aws.Config{Region: awsRegion}
 }
@@ -50,7 +45,7 @@ func (c *cfS3BucketCleanup) getAllCfStackNames() {
 		},
 	}
 	resp, err := c.cfSVC.ListStacks(params)
-	panicErr(err)
+	easylogger.LogFatal(err)
 	c.stacks = resp.StackSummaries
 }
 
@@ -86,7 +81,7 @@ func (c *cfS3BucketCleanup) getBucketContents(bucket *s3.Bucket) []*s3.Object {
 			Bucket: bucket.Name,
 		},
 	)
-	panicErr(err)
+	easylogger.LogFatal(err)
 	return resp.Contents
 }
 
@@ -119,7 +114,7 @@ func (c *cfS3BucketCleanup) emptyBucket(
 			},
 		},
 	)
-	panicErr(err)
+	easylogger.LogFatal(err)
 	if resp.Errors == nil {
 		return []*s3.Error{}
 	}
@@ -132,7 +127,7 @@ func (c *cfS3BucketCleanup) removeUnusedCFBuckets() []*s3.Error {
 		objects []*s3.Object
 	)
 	resp, err := c.s3SVC.ListBuckets(&s3.ListBucketsInput{})
-	panicErr(err)
+	easylogger.LogFatal(err)
 	for _, bucket := range resp.Buckets {
 		if isCloudformationBucket(*bucket.Name, c.bucketFilter) &&
 			c.isBucketDeletable(bucket) {
@@ -150,7 +145,7 @@ func (c *cfS3BucketCleanup) removeUnusedCFBuckets() []*s3.Error {
 					Bucket: bucket.Name,
 				},
 			)
-			panicErr(err)
+			easylogger.LogFatal(err)
 
 		} //else {
 		//	fmt.Println("This bucket is NOT to be deleted", *bucket.Name)
