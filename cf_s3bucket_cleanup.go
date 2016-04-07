@@ -131,7 +131,7 @@ func (c *cfS3BucketCleanup) removeUnusedCFBuckets() []*s3.Error {
 	for _, bucket := range resp.Buckets {
 		if isCloudformationBucket(*bucket.Name, c.bucketFilter) &&
 			c.isBucketDeletable(bucket) {
-			//fmt.Println("This bucket is to be deleted ", *bucket.Name)
+			easylogger.Log("This bucket is to be deleted: ", *bucket.Name)
 			objects = c.getBucketContents(bucket)
 			if !isBucketEmpty(objects) {
 				errs := c.emptyBucket(bucket, objects)
@@ -147,9 +147,7 @@ func (c *cfS3BucketCleanup) removeUnusedCFBuckets() []*s3.Error {
 			)
 			easylogger.LogFatal(err)
 
-		} //else {
-		//	fmt.Println("This bucket is NOT to be deleted", *bucket.Name)
-		//}
+		}
 	}
 	return errors
 }
