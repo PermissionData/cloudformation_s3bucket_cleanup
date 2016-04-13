@@ -74,6 +74,28 @@ func (_mr *_MockCloudFormationAPIRecorder) ContinueUpdateRollback(arg0 interface
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "ContinueUpdateRollback", arg0)
 }
 
+func (_m *MockCloudFormationAPI) CreateChangeSetRequest(_param0 *cloudformation.CreateChangeSetInput) (*request.Request, *cloudformation.CreateChangeSetOutput) {
+	ret := _m.ctrl.Call(_m, "CreateChangeSetRequest", _param0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*cloudformation.CreateChangeSetOutput)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) CreateChangeSetRequest(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "CreateChangeSetRequest", arg0)
+}
+
+func (_m *MockCloudFormationAPI) CreateChangeSet(_param0 *cloudformation.CreateChangeSetInput) (*cloudformation.CreateChangeSetOutput, error) {
+	ret := _m.ctrl.Call(_m, "CreateChangeSet", _param0)
+	ret0, _ := ret[0].(*cloudformation.CreateChangeSetOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) CreateChangeSet(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "CreateChangeSet", arg0)
+}
+
 func (_m *MockCloudFormationAPI) CreateStackRequest(_param0 *cloudformation.CreateStackInput) (*request.Request, *cloudformation.CreateStackOutput) {
 	ret := _m.ctrl.Call(_m, "CreateStackRequest", _param0)
 	ret0, _ := ret[0].(*request.Request)
@@ -94,6 +116,28 @@ func (_m *MockCloudFormationAPI) CreateStack(_param0 *cloudformation.CreateStack
 
 func (_mr *_MockCloudFormationAPIRecorder) CreateStack(arg0 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "CreateStack", arg0)
+}
+
+func (_m *MockCloudFormationAPI) DeleteChangeSetRequest(_param0 *cloudformation.DeleteChangeSetInput) (*request.Request, *cloudformation.DeleteChangeSetOutput) {
+	ret := _m.ctrl.Call(_m, "DeleteChangeSetRequest", _param0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*cloudformation.DeleteChangeSetOutput)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) DeleteChangeSetRequest(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "DeleteChangeSetRequest", arg0)
+}
+
+func (_m *MockCloudFormationAPI) DeleteChangeSet(_param0 *cloudformation.DeleteChangeSetInput) (*cloudformation.DeleteChangeSetOutput, error) {
+	ret := _m.ctrl.Call(_m, "DeleteChangeSet", _param0)
+	ret0, _ := ret[0].(*cloudformation.DeleteChangeSetOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) DeleteChangeSet(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "DeleteChangeSet", arg0)
 }
 
 func (_m *MockCloudFormationAPI) DeleteStackRequest(_param0 *cloudformation.DeleteStackInput) (*request.Request, *cloudformation.DeleteStackOutput) {
@@ -138,6 +182,28 @@ func (_m *MockCloudFormationAPI) DescribeAccountLimits(_param0 *cloudformation.D
 
 func (_mr *_MockCloudFormationAPIRecorder) DescribeAccountLimits(arg0 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "DescribeAccountLimits", arg0)
+}
+
+func (_m *MockCloudFormationAPI) DescribeChangeSetRequest(_param0 *cloudformation.DescribeChangeSetInput) (*request.Request, *cloudformation.DescribeChangeSetOutput) {
+	ret := _m.ctrl.Call(_m, "DescribeChangeSetRequest", _param0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*cloudformation.DescribeChangeSetOutput)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) DescribeChangeSetRequest(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "DescribeChangeSetRequest", arg0)
+}
+
+func (_m *MockCloudFormationAPI) DescribeChangeSet(_param0 *cloudformation.DescribeChangeSetInput) (*cloudformation.DescribeChangeSetOutput, error) {
+	ret := _m.ctrl.Call(_m, "DescribeChangeSet", _param0)
+	ret0, _ := ret[0].(*cloudformation.DescribeChangeSetOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) DescribeChangeSet(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "DescribeChangeSet", arg0)
 }
 
 func (_m *MockCloudFormationAPI) DescribeStackEventsRequest(_param0 *cloudformation.DescribeStackEventsInput) (*request.Request, *cloudformation.DescribeStackEventsOutput) {
@@ -270,6 +336,28 @@ func (_mr *_MockCloudFormationAPIRecorder) EstimateTemplateCost(arg0 interface{}
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "EstimateTemplateCost", arg0)
 }
 
+func (_m *MockCloudFormationAPI) ExecuteChangeSetRequest(_param0 *cloudformation.ExecuteChangeSetInput) (*request.Request, *cloudformation.ExecuteChangeSetOutput) {
+	ret := _m.ctrl.Call(_m, "ExecuteChangeSetRequest", _param0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*cloudformation.ExecuteChangeSetOutput)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) ExecuteChangeSetRequest(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "ExecuteChangeSetRequest", arg0)
+}
+
+func (_m *MockCloudFormationAPI) ExecuteChangeSet(_param0 *cloudformation.ExecuteChangeSetInput) (*cloudformation.ExecuteChangeSetOutput, error) {
+	ret := _m.ctrl.Call(_m, "ExecuteChangeSet", _param0)
+	ret0, _ := ret[0].(*cloudformation.ExecuteChangeSetOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) ExecuteChangeSet(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "ExecuteChangeSet", arg0)
+}
+
 func (_m *MockCloudFormationAPI) GetStackPolicyRequest(_param0 *cloudformation.GetStackPolicyInput) (*request.Request, *cloudformation.GetStackPolicyOutput) {
 	ret := _m.ctrl.Call(_m, "GetStackPolicyRequest", _param0)
 	ret0, _ := ret[0].(*request.Request)
@@ -334,6 +422,28 @@ func (_m *MockCloudFormationAPI) GetTemplateSummary(_param0 *cloudformation.GetT
 
 func (_mr *_MockCloudFormationAPIRecorder) GetTemplateSummary(arg0 interface{}) *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "GetTemplateSummary", arg0)
+}
+
+func (_m *MockCloudFormationAPI) ListChangeSetsRequest(_param0 *cloudformation.ListChangeSetsInput) (*request.Request, *cloudformation.ListChangeSetsOutput) {
+	ret := _m.ctrl.Call(_m, "ListChangeSetsRequest", _param0)
+	ret0, _ := ret[0].(*request.Request)
+	ret1, _ := ret[1].(*cloudformation.ListChangeSetsOutput)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) ListChangeSetsRequest(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "ListChangeSetsRequest", arg0)
+}
+
+func (_m *MockCloudFormationAPI) ListChangeSets(_param0 *cloudformation.ListChangeSetsInput) (*cloudformation.ListChangeSetsOutput, error) {
+	ret := _m.ctrl.Call(_m, "ListChangeSets", _param0)
+	ret0, _ := ret[0].(*cloudformation.ListChangeSetsOutput)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+func (_mr *_MockCloudFormationAPIRecorder) ListChangeSets(arg0 interface{}) *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "ListChangeSets", arg0)
 }
 
 func (_m *MockCloudFormationAPI) ListStackResourcesRequest(_param0 *cloudformation.ListStackResourcesInput) (*request.Request, *cloudformation.ListStackResourcesOutput) {
